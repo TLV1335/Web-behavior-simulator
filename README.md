@@ -26,7 +26,7 @@ This project simulates core browser capabilities—including multi-tab navigatio
   - [Running Performance Benchmarks](#running-performance-benchmarks)
 - [CLI Command Reference](#cli-command-reference)
 - [Benchmark Results](#benchmark-results)
-- [Contributors](#contributors)
+- [Author Roles & Contributions](#author-roles--contributions)
 - [License](#license)
 
 ---
@@ -250,11 +250,24 @@ java -cp bin browserSimulator.experiment.PerformanceLazyLoading
 
 ---
 
-## Contributors
+## Author Roles & Contributions
 
-Developed as a major coursework project for **CSD201 (Data Structures and Algorithms)** at **FPT University**:
+This project was developed as a major coursework project for **CSD201 (Data Structures and Algorithms)** at **FPT University**.
 
-- **Lương Văn Thắng** ([@TLV1335](https://github.com/TLV1335))
+### Lead Software Architect & Core Developer
+**Lương Văn Thắng ([@TLV1335](https://github.com/TLV1335))**
+- **Sole Codebase Author & Implementer:** Solely developed and implemented 100% of the Java source code across all data structures, domain models, core services, benchmarks, and the interactive CLI interface.
+- **System Architecture & Design:** Analyzed domain requirements, designed the overall layered architecture (MVC-like + Facade Pattern), decoupled functional managers (Tab, Navigation, History, Cache, Bookmark, Download, Search), and ensured modular separation of concerns.
+- **Algorithm & Data Structure Proposals:** Formulated and selected key data structures and algorithmic paradigms to solve browser performance bottlenecks:
+  - **Prefix Tree (Trie):** Proposed and implemented the Trie structure with entry sets at each node for $O(L)$ instantaneous URL autocomplete.
+  - **Dual-Stack Navigation:** Proposed and engineered the Two-Stack model (`backStack` and `forwardStack`) for $O(1)$ page traversal.
+  - **Tiered Memory Management (Chunking & Lazy Loading):** Architected the Hot (RAM) vs. Cold (Disk) tiered storage system to eliminate Java heap `OutOfMemoryError` when scaling to 100,000+ history entries.
+  - **LRU Page Cache:** Designed the memory-bounded LRU eviction mechanism utilizing `LinkedHashMap`.
+  - **Binary Search & Custom MergeSort:** Implemented binary search for exact bookmark lookups and engineered a standalone MergeSort algorithm for stable chronological sorting ($O(N \log N)$).
+- **Benchmarking & Experimental Validation:** Designed and executed the performance test suites (`PerformanceExperiment` and `PerformanceLazyLoading`) to empirically benchmark time complexity and memory footprints under worst-case scenarios.
+
+### Coursework Team Members
+The following members contributed to coursework documentation, research questions, theoretical report compilation (Reports 1–4, Mini-Report), and presentations:
 - **Trần Bùi Đạt Thành**
 - **Nguyễn Thị Hồng Anh**
 - **Mai Quang Minh**
@@ -268,3 +281,4 @@ Developed as a major coursework project for **CSD201 (Data Structures and Algori
 ## License
 
 This project is licensed under the [MIT License](LICENSE) - free for academic and educational use.
+
